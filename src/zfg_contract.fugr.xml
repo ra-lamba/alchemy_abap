@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>FG - Contract</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFG_CONTRACTTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFG_CONTRACT</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFM_CONTRACT_BILLING_PLAN</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>RFC: Upload Billing plan of Sales Contract</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_COMMIT</PARAMETER>
+       <TYP>AS4FLAG</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_BILLING_PLAN</PARAMETER>
+       <DBSTRUCT>ZFPLTVB</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DB_UPDATE</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>DBSQL_DUPLICATE_KEY_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag (X or Blank)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_BILLING_PLAN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Billing Plan</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DB_UPDATE</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>DB Update Error</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DBSQL_DUPLICATE_KEY_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>error</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
