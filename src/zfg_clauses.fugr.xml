@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>FG - Clauses</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZFG_CLAUSESTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFG_CLAUSES</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZFM_CONTRACT_CLAUSES</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get/Post Contract Clauses</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_GET</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_POST</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ALL_CLAUSES</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_CLAUSES_ASSIGNED</PARAMETER>
+       <DBSTRUCT>ZST_CLAUSES_ASSIGNED</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_CLAUSES_INPUT</PARAMETER>
+       <DBSTRUCT>ZST_CLAUSES_INPUT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_CLAUSES_ALL</PARAMETER>
+       <DBSTRUCT>/CGDC/_CLSHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DB_UPDATE</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_GET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Method : Get</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_POST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Method : Post</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ALL_CLAUSES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get All Clauses</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CLAUSES_ASSIGNED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>CIS-AD: Clauses Assigned To Contract &amp; Default Objects</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CLAUSES_INPUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>CIS-AD: Clauses Input</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CLAUSES_ALL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>CIS-AD: Clause Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Messages</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DB_UPDATE</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>                                 DB Update Error</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZFM_CONTRACT_CLAUSES_BUY</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get/Post Contract Clauses - Buy</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_POST</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_ALL_CLAUSES</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_CLAUSES_INPUT</PARAMETER>
+       <DBSTRUCT>ZST_CLAUSES_INPUT_BUY</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_CLAUSES_ALL</PARAMETER>
+       <DBSTRUCT>/CGDC/_CLSHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MESSAGES</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DB_UPDATE</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_POST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Method : Post</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_ALL_CLAUSES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Get All Clauses</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CLAUSES_INPUT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>CIS-AD: Clauses Input</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_CLAUSES_ALL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>CIS-AD: Clause Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Messages</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DB_UPDATE</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>                                 DB Update Error</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
